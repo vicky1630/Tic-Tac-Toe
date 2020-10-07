@@ -10,7 +10,11 @@
 <body>
     <div class="container">
         <h1>Tic-Tac-Toe</h1>
-        <div id="message"></div>
+        <div id="message">Player One Goes First!</div>
+        <main class="playerDashboard">
+            <div class="playerInfo" id="player1"><span class="playerHeader">Player 1</span> <br> <span class="token">X</span> </div> 
+            <div class="playerInfo" id="player2"><span class="playerHeader">Player 2</span> <br> <span class="token">0</span>  </div>
+        </main>
         <main id="board">
             <div data-cell-index="0" class="square" id="Square0"></div>
             <div data-cell-index="1" class="square" id="Square1"></div>
@@ -22,7 +26,7 @@
             <div data-cell-index="7" class="square" id="Square7"></div>
             <div data-cell-index="8" class="square" id="Square8"></div>
         </main>
-        <h2 id="winner"></h2>
+        
         <button id="resetButton"> New Game</button>
     </div>
     <script src='js/main.js'></script>

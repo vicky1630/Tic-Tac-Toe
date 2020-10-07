@@ -81,5 +81,27 @@ h1 {
     margin-bottom: 75px;
     margin-top: 0px;
     font-size: 25px;
-    color: #7E685A;
+    color:#7E685A;
+    text-align: center;
+}
+
+.playerDashboard {
+    display: flex;
+}
+
+.playerInfo {
+    /* border: 1px solid #7E685A; */
+    width: 250px;
+    height: 150px;
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.playerHeader {
+    font-size: 35px;
+    color: #E7717D;
+}
+
+.token {
+    font-size: 100px;
 }
