@@ -6,10 +6,11 @@
 
 # Wireframes and User Stories
 
+(https://imgur.com/a/rhbocmz)
+
 My Story Points
 
-My WireFrame Idea
-
+My WireFrame Sketch: 
 # Determing the Winner
 
 * Describe how you solved for the winner
