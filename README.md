@@ -6,7 +6,8 @@
 
 # Wireframes and User Stories
 
-[!image](https://imgur.com/a/rhbocmz)
+Wireframe Sketch via Google Draw
+![My Wireframe Design](https://i.imgur.com/gpiy7nC.jpg)
 
 My Story Points
 
