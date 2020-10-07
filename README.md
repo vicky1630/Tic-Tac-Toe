@@ -6,7 +6,7 @@
 
 # Wireframes and User Stories
 
-(https://imgur.com/a/rhbocmz)
+[(https://imgur.com/a/rhbocmz)]
 
 My Story Points
 
