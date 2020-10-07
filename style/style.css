@@ -3,12 +3,6 @@ body {
     font-family: 'Oxanium', cursive, arial;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .container {
     min-height: 100vh;
     display: flex;
@@ -55,7 +49,7 @@ button:hover {
   }
 
 h1 {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
   }
   
 .square:hover {
@@ -85,5 +79,7 @@ h1 {
 
 #message {
     margin-bottom: 75px;
-    margin-top: 50px;
+    margin-top: 0px;
+    font-size: 25px;
+    color: #7E685A;
 }
