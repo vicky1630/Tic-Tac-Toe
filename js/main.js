@@ -7,9 +7,14 @@ let currentPlayer = "Player 1"
 let gameInput = ["", "", "", "", "","", "", "", ""]
 let mySquares = document.querySelectorAll('.square')
 let newGameButton = document.querySelector("#resetButton")
+
 const weHaveAWinner = () => `${currentPlayer} won!`
 const weHaveADraw = () => "Both Lose!"
 const playerAlert = () => `${currentPlayer}'s Turn`
+
+
+const soundBackground = new Audio("assets/backgroundmusic.mp3")
+soundBackground.play();
 
 //These combinations are winning lines in a 3X3 grid
 const winningLines = [
@@ -58,6 +63,10 @@ const handlerCheckGameStatus = () => {
 if (gameOver) {
     messageBox.innerHTML = weHaveAWinner()
     activeGame = false
+    //gives a winner sound and pauses the drop token sound
+    const soundWinner = new Audio("assets/winner.mp3")
+    soundWinner.play();
+    soundTokenDrop.pause()
     return
 }
 //if no empty spaces are available then that means there was no winner - its a tie. We end the game via thr activeGame variable. 
@@ -65,6 +74,12 @@ let draw = !gameInput.includes("")
 if (draw) {
     messageBox.innerHTML = weHaveADraw()
     activeGame = false
+    
+    //if draw, play the draw sound and I think its doing something to stop that last drop token sound - I can sort of hear it but can't 100% confirm. 
+    //I think it sounds better so I'm keeping it.
+    const soundDraw = new Audio("assets/draw.mp3")
+    soundDraw.play();
+    soundTokenDrop.pause()
     return
 }
 //make the player switch at the end of all this because if there was no winning match then its the next player's turn
@@ -83,6 +98,8 @@ const handlerSquareClicked = (sqaure, index) => {
 
 //This handler is for when the square is selected for the user to place the token. I am taking the target and grabbing the data-cell-index value.
 const handlerSelectSpot = (e) => {
+
+
     const selectedSqaure = e.target
     const selectedSqaureIndex = parseInt(selectedSqaure.getAttribute("data-cell-index"))
     //We use the selected index and check the "status" of that index. If the index is not empty or the game is no longer active via the activeGame 
@@ -95,10 +112,16 @@ const handlerSelectSpot = (e) => {
     //Then we go through the checks to see if there was a winner. If there was a winner then the game end with the winner message. If there is no winner then
     //the game continues with the nezt player's turn. If there's no more avaialble spaces on the frid then the draw message will appear. 
     handlerCheckGameStatus();
+    //Adds sound for placing tokens
+    const soundTokenDrop = new Audio("assets/tokendrop.mp3")
+    soundTokenDrop.play();
 }
 
 //This section i for the reset button. The reset button allows users to clear the board for another game without having to refresh the page. 
 const handlerRestart = () => {
+    //Adds sound for clearing the board
+    const soundClearBoard = new Audio("assets/newgame2.mp3")
+    soundClearBoard.play();
     //makes the game active so majoirty of functions can work
     activeGame = true
     //we always start the game with X token and player 1
