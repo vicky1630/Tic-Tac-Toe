@@ -8,7 +8,7 @@ The first thing I did was read all of the material given to me about the require
 
 After I got all of the planning done I had to start actually working. First, I took some time to see how some people approach this problems. I found a lot of documentation on two-player games using JavaScript and a lot of tic-tac-toe examples. After taking in a lot of the JavaScript information, I felt overwhelmed on where to start. So I decided to switch gears and work on the website layout. Since I drafted up the wireframe of my interface I used that as a guide. 
 
-After a certain point I had no choice but to jump into building out the funvtionality. I started with the very basics of adding a letter to the board. Once I got that to work, I felt motivated to keep going and was able to get the tokens to switch back and forth between X and O.
+After a certain point I had no choice but to jump into building out the funvtionality. I started with the very basics of adding a letter to the board. Once I got that to work, I felt motivated to keep going and was able to get the tokens to switch back and forth between X and O. To add the token to board I looked at out ATM lab and notice how was adding in text to the amount display. I had to do a decent amount of research online about how to switch the tokens. There were a lot of ways to handle this but I did find one that was simple enough for me to understand and implement. 
 
 ## Wireframes and User Stories
 
