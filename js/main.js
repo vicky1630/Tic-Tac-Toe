@@ -28,7 +28,34 @@ const handlerPlayerSwitch = () => {
     messageBox.innerHTML = playerAlert()
 }
 
-//
+const handlerCheckGameStatus = () => {
+    let gameOver = false;
+    for (i=0; i<=7; i++) {
+        const winningGame = winningLines[i];
+        let box1 = gameInput[winningGame[0]];
+        let box2 = gameInput[winningGame[1]];
+        let box3 = gameInput[winningGame[2]];
+        if (box1 === "" ||box2 === "" ||box3 === "") {
+            continue
+        } if (box1===box2 && box2===box3) {
+            gameOver=true
+            break
+        }
+    }
+if (gameOver) {
+    messageBox.innerHTML = weHaveAWinner()
+    activeGame = false
+    return
+}
+let draw = !gameInput.includes("")
+if (draw) {
+    messageBox.innerHTML = weHaveADraw()
+    activeGame = false
+    return
+}
+handlerPlayerSwitch()
+
+}
 
 const handlerSquareClicked = (sqaure, index) => {
     messageBox.innerHTML = playerAlert();
@@ -44,6 +71,7 @@ const handlerSelectSpot = (e) => {
         return
     }
     handlerSquareClicked(selectedSqaure,selectedSqaureIndex);
+    handlerCheckGameStatus();
 }
 
 const handlerRestart = () => {
@@ -52,5 +80,3 @@ const handlerRestart = () => {
 
 mySquares.forEach(square => square.addEventListener("click", handlerSelectSpot))
 newGameButton.addEventListener("click", handlerRestart)
-
-
