@@ -25,6 +25,7 @@ const winningLines = [
 
 const handlerPlayerSwitch = () => {
     currentPlayerToken= currentPlayerToken ==="X" ? "0" : "X"
+    currentPlayer= currentPlayer === "Player 1" ? "Player 2" : "Player 1"
     messageBox.innerHTML = playerAlert()
 }
 
@@ -75,6 +76,11 @@ const handlerSelectSpot = (e) => {
 }
 
 const handlerRestart = () => {
+    activeGame = true
+    currentPlayerToken = "X"
+    currentPlayer = "Player 1"
+    gameInput = ["", "", "", "", "","", "", "", ""]
+    messageBox.innerHTML = greeting
     mySquares.forEach(square => square.innerHTML = "")
 }
 
