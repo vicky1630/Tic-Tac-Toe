@@ -11,7 +11,6 @@ const weHaveAWinner = () => `${currentPlayer} won!`
 const weHaveADraw = () => "Both Lose!"
 const playerAlert = () => `${currentPlayer}'s Turn`
 
-//These combinations are winning lines in a 3X3 grid
 const winningLines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -23,28 +22,35 @@ const winningLines = [
     [2, 4, 6]
 ]
 
+
 const handlerPlayerSwitch = () => {
-    currentPlayerToken= currentPlayerToken === "X" ? "0" : "X"
+    currentPlayerToken= currentPlayerToken ==="X" ? "0" : "X"
     messageBox.innerHTML = playerAlert()
 }
 
-const handlerSquareClicked = (sqaure) => {
+//
+
+const handlerSquareClicked = (sqaure, index) => {
+    messageBox.innerHTML = playerAlert();
+    gameInput[index] = currentPlayerToken;
     sqaure.innerHTML = currentPlayerToken;
 }
+
 
 const handlerSelectSpot = (e) => {
     const selectedSqaure = e.target
     const selectedSqaureIndex = parseInt(selectedSqaure.getAttribute("data-cell-index"))
-
+    if (gameInput[selectedSqaureIndex] !== "" || !activeGame) {
+        return
+    }
     handlerSquareClicked(selectedSqaure,selectedSqaureIndex);
-    handlerPlayerSwitch()
-
 }
-
-mySquares.forEach(square => square.addEventListener("click", handlerSelectSpot))
 
 const handlerRestart = () => {
     mySquares.forEach(square => square.innerHTML = "")
 }
 
+mySquares.forEach(square => square.addEventListener("click", handlerSelectSpot))
 newGameButton.addEventListener("click", handlerRestart)
+
+
