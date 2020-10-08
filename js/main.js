@@ -7,14 +7,12 @@ let currentPlayer = "Player 1"
 let gameInput = ["", "", "", "", "","", "", "", ""]
 let mySquares = document.querySelectorAll('.square')
 let newGameButton = document.querySelector("#resetButton")
-
+let musicButtonOff = document.querySelector("#backgroundMusicOff")
+let musicButtonOn = document.querySelector("#backgroundMusicOn")
+const soundBackground = new Audio("assets/backgroundmusic.mp3")
 const weHaveAWinner = () => `${currentPlayer} won!`
 const weHaveADraw = () => "Both Lose!"
 const playerAlert = () => `${currentPlayer}'s Turn`
-
-
-const soundBackground = new Audio("assets/backgroundmusic.mp3")
-soundBackground.play();
 
 //These combinations are winning lines in a 3X3 grid
 const winningLines = [
@@ -135,9 +133,21 @@ const handlerRestart = () => {
     //reset the squares on the screen to have no tokens on them
     mySquares.forEach(square => square.innerHTML = "")
 }
+//pause handler for background music
+const handlerMusicOff = () => {
+    soundBackground.pause();   
+}
+//play handler for background music
+const handlerMusicOn = () => {
+    soundBackground.play();   
+}
 
 //my buttons
 //when you select any square you call the Select Spot handler which identifies which index it should take up in the gameInput array, if the index is available. 
 mySquares.forEach(square => square.addEventListener("click", handlerSelectSpot))
 //this is my "New Game" button. When this button is clicked it resets the board game and game status using the Restart Handler 
 newGameButton.addEventListener("click", handlerRestart)
+musicButtonOff.addEventListener("click", handlerMusicOff)
+musicButtonOn.addEventListener("click", handlerMusicOn)
+
+

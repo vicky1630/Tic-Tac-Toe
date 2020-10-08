@@ -49,8 +49,9 @@ button:hover {
   }
 
 h1 {
-      margin-bottom: 50px;
+    margin-bottom: 50px;
   }
+
   
 .square:hover {
     cursor: pointer;
@@ -90,7 +91,6 @@ h1 {
 }
 
 .playerInfo {
-    /* border: 1px solid #7E685A; */
     width: 250px;
     height: 150px;
     text-align: center;
@@ -104,4 +104,18 @@ h1 {
 
 .token {
     font-size: 50px;
+}
+
+footer {
+  font-size: 10px;;
+}
+
+#music {
+display: inline-block;
+margin-top: 100px;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
 }
