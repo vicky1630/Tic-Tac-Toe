@@ -42,3 +42,9 @@ const handlerSelectSpot = (e) => {
 }
 
 mySquares.forEach(square => square.addEventListener("click", handlerSelectSpot))
+
+const handlerRestart = () => {
+    mySquares.forEach(square => square.innerHTML = "")
+}
+
+newGameButton.addEventListener("click", handlerRestart)
