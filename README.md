@@ -8,6 +8,8 @@ The first thing I did was read all of the material given to me about the require
 
 After I got all of the planning done I had to start actually working. First, I took some time to see how some people approach this problems. I found a lot of documentation on two-player games using JavaScript and a lot of tic-tac-toe examples. After taking in a lot of the JavaScript information, I felt overwhelmed on where to start. So I decided to switch gears and work on the website layout. Since I drafted up the wireframe of my interface I used that as a guide. 
 
+After a certain point I had no choice but to jump into building out the funvtionality. I started with the very basics of adding a letter to the board. Once I got that to work, I felt motivated to keep going and was able to get the tokens to switch back and forth between X and O.
+
 ## Wireframes and User Stories
 
 **Wireframe Sketch via Google Draw**
@@ -25,12 +27,13 @@ I love JIRA but since I do not have access for this project I decided to throw t
 
 ## Determing the Winner
 
+I created an array that listed all the winning lines. 
+
 * Describe how you solved for the winner
 
 ## Technologies Used
 
-Using the ? thing. 
 
 ## Notable Functions
 
-* List unsolved problems which would be fixed in future iterations.
+Used the ternary operator which is for conditional expressions. When it comes to swtiching the token that is on the board the program checks its current status (currentPlayerToken= currentPlayerToken === "X" ? "0" : "X"). If the token is X then lets go to O and vice versa. Since X starts our games, if the value of the token is anything else, it gets set to X. 
