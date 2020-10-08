@@ -23,6 +23,11 @@ const winningLines = [
     [2, 4, 6]
 ]
 
+const handlerPlayerSwitch = () => {
+    currentPlayerToken= currentPlayerToken === "X" ? "0" : "X"
+    messageBox.innerHTML = playerAlert()
+}
+
 const handlerSquareClicked = (sqaure) => {
     sqaure.innerHTML = currentPlayerToken;
 }
@@ -32,6 +37,7 @@ const handlerSelectSpot = (e) => {
     const selectedSqaureIndex = parseInt(selectedSqaure.getAttribute("data-cell-index"))
 
     handlerSquareClicked(selectedSqaure,selectedSqaureIndex);
+    handlerPlayerSwitch()
 
 }
 
