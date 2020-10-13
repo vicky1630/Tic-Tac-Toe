@@ -4,6 +4,10 @@ const greeting = "Player 1 goes first!"
 let activeGame = true
 let currentPlayerToken = "X"
 let currentPlayer = "Player 1"
+let scorePlayer1 = 0
+let scorePlayer2 = 0
+let score1 = document.querySelector("#score1")
+let score2 = document.querySelector("#score2")
 let gameInput = ["", "", "", "", "","", "", "", ""]
 let mySquares = document.querySelectorAll('.square')
 let newGameButton = document.querySelector("#resetButton")
@@ -13,6 +17,7 @@ const soundBackground = new Audio("assets/backgroundmusic.mp3")
 const weHaveAWinner = () => `${currentPlayer} won!`
 const weHaveADraw = () => "Both Lose!"
 const playerAlert = () => `${currentPlayer}'s Turn`
+let wholeNewGame = document.querySelector("#newGame")
 
 //These combinations are winning lines in a 3X3 grid
 const winningLines = [
@@ -54,17 +59,25 @@ const handlerCheckGameStatus = () => {
         } if (box1===box2 && box2===box3) {
             gameOver=true
             break
-        }
+        } 
     }
 //if we continue to this part then we either have a winner or the game ended in a draw. We end the game via thr activeGame variable. This 
 //displays the message for the condition met. 
 if (gameOver) {
     messageBox.innerHTML = weHaveAWinner()
+    //This IF statement adds the 1 to the applicable player's score when they win (variables score1 and score2)
+    if(currentPlayer == "Player 1") 
+    scorePlayer1++;
+else
+scorePlayer2++;
+    //This upates the HTML to be the current score
+    score1.innerHTML = scorePlayer1
+    score2.innerHTML = scorePlayer2
+
     activeGame = false
     //gives a winner sound and pauses the drop token sound
     const soundWinner = new Audio("assets/winner.mp3")
     soundWinner.play();
-    soundTokenDrop.pause()
     return
 }
 //if no empty spaces are available then that means there was no winner - its a tie. We end the game via thr activeGame variable. 
@@ -77,10 +90,10 @@ if (draw) {
     //I think it sounds better so I'm keeping it.
     const soundDraw = new Audio("assets/draw.mp3")
     soundDraw.play();
-    soundTokenDrop.pause()
     return
 }
 //make the player switch at the end of all this because if there was no winning match then its the next player's turn
+
 handlerPlayerSwitch()
 
 }
@@ -88,7 +101,6 @@ handlerPlayerSwitch()
 //This handler is used to push the selection to the gameInput Array. It also changes the message to alert which player is next or if we 
 //have a winner. 
 const handlerSquareClicked = (sqaure, index) => {
-    messageBox.innerHTML = playerAlert();
     gameInput[index] = currentPlayerToken;
     sqaure.innerHTML = currentPlayerToken;
 }
@@ -132,6 +144,8 @@ const handlerRestart = () => {
     messageBox.innerHTML = greeting
     //reset the squares on the screen to have no tokens on them
     mySquares.forEach(square => square.innerHTML = "")
+    let scorePlayer1 = 0
+    let scorePlayer2 = 0
 }
 //pause handler for background music
 const handlerMusicOff = () => {
@@ -142,12 +156,23 @@ const handlerMusicOn = () => {
     soundBackground.play();   
 }
 
+const handlerNewGame = () => {
+    let scorePlayer1 = 0
+    let scorePlayer2 = 0
+    score1.innerHTML = scorePlayer1
+    score2.innerHTML = scorePlayer2
+    
+}
+
 //my buttons
 //when you select any square you call the Select Spot handler which identifies which index it should take up in the gameInput array, if the index is available. 
 mySquares.forEach(square => square.addEventListener("click", handlerSelectSpot))
 //this is my "New Game" button. When this button is clicked it resets the board game and game status using the Restart Handler 
 newGameButton.addEventListener("click", handlerRestart)
+//these buttons turn the background music on and off
 musicButtonOff.addEventListener("click", handlerMusicOff)
 musicButtonOn.addEventListener("click", handlerMusicOn)
+//whole new game button - clears player's scores
+wholeNewGame.addEventListener("click", handlerNewGame)
 
 

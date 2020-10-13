@@ -14,8 +14,10 @@
         <h1>Tic-Tac-Toe</h1>
         <div id="message">Player One Goes First!</div>
         <main class="playerDashboard">
+            <div class="playerInfo" id="player1games"><span class="gamesWon">GAMES WON</span> <br> <span class="score" id="score1">0</span> </div> 
             <div class="playerInfo" id="player1"><span class="playerHeader">Player 1</span> <br> <span class="token">X</span> </div> 
-            <div class="playerInfo" id="player2"><span class="playerHeader">Player 2</span> <br> <span class="token">0</span>  </div>
+            <div class="playerInfo" id="player2"><span class="playerHeader">Player 2</span> <br> <span class="token">O</span>  </div>
+            <div class="playerInfo" id="player2games"><span class="gamesWon">GAMES WON</span> <br> <span class="score" id="score2">0</span>  </div>
         </main>
         <main id="board">
             <div data-cell-index="0" class="square" id="Square0"></div>
@@ -29,7 +31,8 @@
             <div data-cell-index="8" class="square" id="Square8"></div>
         </main>
         
-        <button id="resetButton"> New Game</button>
+        <button id="resetButton">Reset Board</button>
+        <button id="newGame">New Game</button>
     </div>
     <footer>Sound from Zapsplat.com</footer>
     <script src='js/main.js'></script>
