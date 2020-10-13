@@ -27,10 +27,10 @@ I love JIRA but since I do not have access for this project I decided to throw t
 
 ## Determing the Winner
 
-First I had to think through what happens logically when you play tic tac toe. When you play with no computer you would mark a square, and then the next person would mark a square. After someone marks a square you can tell if someone won or not by looking at the board an assesing if there is a complete line - and if there is a complete line, are they all the same token? I wanted to have this same logic for the program. So I created a 
+First I had to think through what happens logically when you play tic tac toe. When you play with no computer you would mark a square, and then the next person would mark a square. After someone marks a square you can tell if someone won or not by looking at the board an assesing if there is a complete line - and if there is a complete line, are they all the same token? I wanted to have this same logic for the program. So I created a "handler" (function) that gets called when I square is selected, or "marked". This handler grabs the square's assigned index when the square is selected and triggers a function that takes that index and if the square is blank then updates the square with the player's token, 
 
 Its easier for me bc I know that lines across, down and diagnol are winners. To get the program to "know" that I created an object of arrays. 
-* Describe how you solved for the winner
+
 
 ## Technologies Used
 
