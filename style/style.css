@@ -59,10 +59,6 @@ h1 {
     background: #C2CAD0;
   }
 
-.occupied:hover {
-    background: #ff3a3a;
-  }
-
 #Square0, #Square1, #Square2 {
   border-top: none;
 }
