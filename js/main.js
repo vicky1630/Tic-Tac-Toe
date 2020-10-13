@@ -20,6 +20,7 @@ const weHaveADraw = () => "Both Lose!"
 const playerAlert = () => `${currentPlayer}'s Turn`
 let wholeNewGame = document.querySelector("#newGame")
 
+
 //These combinations are winning lines in a 3X3 grid
 const winningLines = [
     [0, 1, 2],
