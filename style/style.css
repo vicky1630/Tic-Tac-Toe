@@ -50,6 +50,7 @@ button:hover {
 
 h1 {
     margin-bottom: 50px;
+    font-size:  65px;
   }
 
   
@@ -81,7 +82,7 @@ h1 {
 #message {
     margin-bottom: 45px;
     margin-top: 0px;
-    font-size: 25px;
+    font-size: 50px;
     color:#7E685A;
     text-align: center;
 }

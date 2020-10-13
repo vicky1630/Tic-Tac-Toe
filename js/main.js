@@ -145,8 +145,6 @@ const handlerRestart = () => {
     messageBox.innerHTML = greeting
     //reset the squares on the screen to have no tokens on them
     mySquares.forEach(square => square.innerHTML = "")
-    let scorePlayer1 = 0
-    let scorePlayer2 = 0
 }
 //pause handler for background music
 const handlerMusicOff = () => {
@@ -158,11 +156,7 @@ const handlerMusicOn = () => {
 }
 
 const handlerNewGame = () => {
-    let scorePlayer1 = 0
-    let scorePlayer2 = 0
-    score1.innerHTML = scorePlayer1
-    score2.innerHTML = scorePlayer2
-    soundWholeNewGame.play()
+    location.reload()
 }
 
 //my buttons
