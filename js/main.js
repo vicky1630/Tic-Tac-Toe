@@ -14,6 +14,7 @@ let newGameButton = document.querySelector("#resetButton")
 let musicButtonOff = document.querySelector("#backgroundMusicOff")
 let musicButtonOn = document.querySelector("#backgroundMusicOn")
 const soundBackground = new Audio("assets/backgroundmusic.mp3")
+const soundWholeNewGame = new Audio("assets/wholenewgame.mp3")
 const weHaveAWinner = () => `${currentPlayer} won!`
 const weHaveADraw = () => "Both Lose!"
 const playerAlert = () => `${currentPlayer}'s Turn`
@@ -161,7 +162,7 @@ const handlerNewGame = () => {
     let scorePlayer2 = 0
     score1.innerHTML = scorePlayer1
     score2.innerHTML = scorePlayer2
-    
+    soundWholeNewGame.play()
 }
 
 //my buttons
